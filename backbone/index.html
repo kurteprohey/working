@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Test backbone app</title>
 </head>
 <body>
-asdasd
+<div class="preview"></div>
+<script id="user" type="text/template">
+	<li><b><%= name %></b></li>
+	<li><%= age %></li>
+	<li><%= job %></li>
+</script>
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="//underscorejs.org/underscore-min.js"></script>
+<script src="//backbonejs.org/backbone-min.js"></script>
+<script src="models/ModelUser.js"></script>
+<script src="views/ViewUser.js"></script>
+<script>
+	var user = new ModelUser({
+		name: 'Yehor',
+		age: 22
+	});
+	var view = new ViewUser({
+		model: user
+	});
+	view.render();
+</script>
 </body>
 </html>
